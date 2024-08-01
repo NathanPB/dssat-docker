@@ -19,6 +19,7 @@ RUN make
 RUN make install
 
 FROM debian:stable-slim
+ENV DSSAT_HOME=/app/dssat/
 COPY --from=build /app/dssat /app/dssat/
 WORKDIR /app/dssat
 ENTRYPOINT ["/app/dssat/dscsm048"]
