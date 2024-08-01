@@ -14,12 +14,12 @@ RUN git checkout "${DSSAT_GIT_TAG}"
 # Compile
 RUN mkdir build
 WORKDIR /dssat-csm-os/build
-RUN cmake -DCMAKE_INSTALL_PREFIX=/app/dssat ..
+RUN cmake -DCMAKE_INSTALL_PREFIX=/opt/dssat ..
 RUN make
 RUN make install
 
 FROM debian:stable-slim
-ENV DSSAT_HOME=/app/dssat/
-COPY --from=build /app/dssat /app/dssat/
+ENV DSSAT_HOME=/opt/dssat/
+COPY --from=build /opt/dssat /opt/dssat/
 WORKDIR /app/dssat
-ENTRYPOINT ["/app/dssat/dscsm048"]
+ENTRYPOINT ["/opt/dssat/dscsm048"]
