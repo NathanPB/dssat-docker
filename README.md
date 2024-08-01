@@ -24,4 +24,4 @@
   If you followed the above steps your image should be tagged as ``dssat-csm`` (feel free to change this tag label).
 
   1. Change to the directory with your experimental files (XFile, etc.)
-  2. Run the container:  ``docker run --rm -v ${PWD}:/data -w /data dssat-csm A <xfile name>`` or ``docker run --rm -v ${PWD}:/data -w /data dssat-csm B <batch file name>``
+  2. Run the container:  ``docker run --rm -v ${PWD}:/data/dssat dssat-csm <arguments...>``

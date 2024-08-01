@@ -22,5 +22,5 @@ FROM debian:stable-slim
 ENV DSSAT_HOME=/opt/dssat/
 COPY --from=build /opt/dssat /opt/dssat/
 RUN ln -s /opt/dssat/dscsm048 /usr/local/bin/dscsm048
-WORKDIR /app/dssat
+WORKDIR /data/dssat
 ENTRYPOINT ["dscsm048"]
